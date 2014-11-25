@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Resource</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-app="app">
+    <div class="jumbotron">
+        <h1>$http vs $resource vs Restangular</h1>
+    </div>
+
+    <div class="container" ng-controller="resourceCtrl">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>$http</h2>
+                <button class="btn btn-primary" ng-click="requestValuesHttp()">Values ($http)</button>
+                <p ng-repeat="v in httpValues">{{v}}</p>
+            </div>
+            <div class="col-md-4">
+                <h2>$resource</h2>
+                <button class="btn btn-primary" ng-click="requestValuesResource()">Values ($resource)</button>
+                <p ng-repeat="v in resourceValues">{{v}}</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Restangular</h2>
+                <button class="btn btn-primary" ng-click="requestValuesRestangular()">Values (Restangular)</button>
+                <p ng-repeat="v in restangularValues">{{v}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>$http</h2>
+                <div class="row">
+                    <input type="number" ng-model="idForHttp" />
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" ng-click="requestValueByIdHttp()">Single Value ($http)</button>
+                </div>
+                <div class="row">
+                    <span>{{singleValueHttp.value}}</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>$resource</h2>
+                <div class="row">
+                    <input type="number" ng-model="idForResource" />
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" ng-click="requestValueByIdResource()">Single Value ($resource)</button>
+                </div>
+                <div class="row">
+                    <span>{{singleValueResource.value}}</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>Restangular</h2>
+                <div class="row">
+                    <input type="number" ng-model="idForRestangular" />
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" ng-click="requestValueByIdRestangular()">Single Value (Restangular)</button>
+                </div>
+                <div class="row">
+                    <span>{{singleValueRestangular.value}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/lodash.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/restangular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/resourceCtrl.js"></script>
+    <script src="app/dataService.js"></script>
+</body>
+</html>
+
